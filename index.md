@@ -55,3 +55,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://uizard.io)
+
+## Daily Update: 2026-02-15
+
+### AdCreative.ai
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://www.adcreative.ai)
+### Rytr
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://rytr.me)
