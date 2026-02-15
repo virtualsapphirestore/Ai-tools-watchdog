@@ -60,16 +60,3 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *The bot is warming up its engines... Stay tuned for the first run!*
 
 ---
-
-## Daily Update: 2026-02-15
-
-### Predis.ai
-
-*Error generating review: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.*
-
-[Visit Tool](https://predis.ai)
-### Synthesia
-
-*Error generating review: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.*
-
-[Visit Tool](https://www.synthesia.io)
