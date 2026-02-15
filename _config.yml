@@ -1,0 +1,5 @@
+title: AI Tools Watchdog
+description: Daily automated AI tool reviews.
+theme: jekyll-theme-minimal
+plugins:
+  - jekyll-seo-tag
