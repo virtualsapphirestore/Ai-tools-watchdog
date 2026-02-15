@@ -1,3 +1,7 @@
+---
+layout: default
+title: AI Tools Watchdog
+---
 # AI Tools Watchdog 🕵️‍♂️
 
 Welcome to your daily AI tools observatory! Here you will find fresh, automated reviews of the most promising AI tools on the market.

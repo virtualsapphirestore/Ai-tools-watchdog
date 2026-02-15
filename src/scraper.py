@@ -89,7 +89,7 @@ def main():
     # Ensure file exists
     if not os.path.exists(file_path):
         with open(file_path, "w", encoding="utf-8") as f:
-            f.write("# AI Tools Watchdog\n\nAutomated daily reviews of trending AI tools.\n\n")
+            f.write("---\nlayout: default\ntitle: AI Tools Watchdog\n---\n\n# AI Tools Watchdog\n\nAutomated daily reviews of trending AI tools.\n\n")
             
     with open(file_path, "a", encoding="utf-8") as f:
         f.write(new_content)
