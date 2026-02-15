@@ -51,3 +51,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://www.perplexity.ai)
+
+## Daily Update: 2026-02-15
+
+### Gamma App
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://gamma.app)
+### Perplexity AI
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://www.perplexity.ai)
