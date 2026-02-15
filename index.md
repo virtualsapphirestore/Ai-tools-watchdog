@@ -94,3 +94,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://www.perplexity.ai)
+
+## Daily Update: 2026-02-15
+
+### Murf AI
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://murf.ai)
+### Jasper
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://jasper.ai)
