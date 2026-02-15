@@ -144,7 +144,7 @@ def generate_review(tool):
 
     try:
         genai.configure(api_key=API_KEY)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
         prompt = f"""
         Write a short but engaging review for an AI tool called "{tool['name']}".
@@ -175,7 +175,7 @@ def generate_review(tool):
         return review_text + "\n---\n"
     except Exception as e:
         print(f"Error generating review for {tool['name']}: {e}")
-        return f"### {tool['name']}\n\n*Error generating review.*\n\n[Visit Tool]({tool['url']})\n"
+        return f"### {tool['name']}\n\n*Error generating review: {str(e)}*\n\n[Visit Tool]({tool['url']})\n"
 
 # --- Main Execution ---
 def main():
