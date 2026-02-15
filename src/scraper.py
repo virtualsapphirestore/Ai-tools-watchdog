@@ -186,7 +186,16 @@ def generate_review(tool):
         return review_text + "\n---\n"
     except Exception as e:
         print(f"Error generating review for {tool['name']}: {e}")
-        return f"### {tool['name']}\n\n*Error generating review: {str(e)}*\n\n[Visit Tool]({tool['url']})\n"
+        
+        available_models = []
+        try:
+             for m in genai.list_models():
+                if 'generateContent' in m.supported_generation_methods:
+                    available_models.append(m.name)
+        except:
+            available_models = ["Could not list models"]
+            
+        return f"### {tool['name']}\n\n*Error: {str(e)}*\n\n*Available Models: {', '.join(available_models)}*\n\n[Visit Tool]({tool['url']})\n"
 
 # --- Main Execution ---
 def main():
