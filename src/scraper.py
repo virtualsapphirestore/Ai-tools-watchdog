@@ -11,6 +11,7 @@ API_KEY = os.environ.get("GOOGLE_API_KEY")
 # Add your affiliate links here. Format: "Tool Name": "Your Link"
 AFFILIATE_LINKS = {
     "Gamma App": "https://gamma.app", # REPLACE THIS LATER with your affiliate link
+    "Murf AI": "https://murf.ai",     # REPLACE THIS LATER with your affiliate link
     "Jasper": "https://jasper.ai",
     "Copy.ai": "https://copy.ai"
 }
