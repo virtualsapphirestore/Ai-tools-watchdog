@@ -73,3 +73,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Error generating review: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.*
 
 [Visit Tool](https://copy.ai)
+
+## Daily Update: 2026-02-15
+
+### Gemini
+
+*Error generating review: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.*
+
+[Visit Tool](https://gemini.google.com)
+### Predis.ai
+
+*Error generating review: 404 models/gemini-1.5-flash is not found for API version v1beta, or is not supported for generateContent. Call ListModels to see the list of available models and their supported methods.*
+
+[Visit Tool](https://predis.ai)
