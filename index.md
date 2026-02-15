@@ -42,3 +42,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://replit.com)
+
+## Daily Update: 2026-02-15
+
+### Suno AI
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://suno.ai)
+### Uizard
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://uizard.io)
