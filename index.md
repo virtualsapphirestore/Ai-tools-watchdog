@@ -29,3 +29,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://jasper.ai)
+
+## Daily Update: 2026-02-15
+
+### Predis.ai
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://predis.ai)
+### Replit Ghostwriter
+
+*Review pending (API Key missing)*
+
+[Visit Tool](https://replit.com)
