@@ -19,26 +19,37 @@ AFFILIATE_LINKS = {
 # --- Mock Data Source (Replace with real scraping logic) ---
 # In the future, you can use requests/BeautifulSoup here to scrape sites like ProductHunt, etc.
 def fetch_trending_tools():
-    # This is a placeholder list. You can edit this or add scraping logic.
-    tools = [
-        {
-            "name": "Gamma App",
-            "url": "https://gamma.app",
-            "description": "A new medium for presenting ideas, powered by AI. Create beautiful presentations, documents, and webpages."
-        },
-        {
-            "name": "Perplexity AI",
-            "url": "https://www.perplexity.ai",
-            "description": "An AI-powered search engine that provides direct answers with citations."
-        }
+    # Expanded list of tools to rotate through
+    all_tools = [
+        {"name": "Gamma App", "url": "https://gamma.app", "description": "Create beautiful presentations, documents, and webpages with AI."},
+        {"name": "Perplexity AI", "url": "https://www.perplexity.ai", "description": "An AI-powered search engine that provides direct answers with citations."},
+        {"name": "Murf AI", "url": "https://murf.ai", "description": "Turn text into lifelike speech for your videos."},
+        {"name": "Jasper", "url": "https://jasper.ai", "description": "AI copywriter for marketing content."},
+        {"name": "Copy.ai", "url": "https://copy.ai", "description": "AI writing tool for sales and marketing teams."},
+        {"name": "Midjourney", "url": "https://www.midjourney.com", "description": "Generates realistic images from natural language descriptions."},
+        {"name": "Runway", "url": "https://runwayml.com", "description": "AI tools for video editing and generation."},
+        {"name": "ElevenLabs", "url": "https://elevenlabs.io", "description": "Text to speech and voice cloning software."},
+        {"name": "Beautiful.ai", "url": "https://beautiful.ai", "description": "Presentation software that designs for you."},
+        {"name": "Tome", "url": "https://tome.app", "description": "AI-powered storytelling format for presentations."}
     ]
     
+    # Simple rotation logic based on the day of the year
+    # Selects 2 different tools each day
+    day_of_year = datetime.datetime.now().timetuple().tm_yday
+    tools_count = len(all_tools)
+    
+    # Pick 2 tools based on the current day to ensure rotation
+    idx1 = (day_of_year * 2) % tools_count
+    idx2 = (day_of_year * 2 + 1) % tools_count
+    
+    selected_tools = [all_tools[idx1], all_tools[idx2]]
+    
     # Inject Affiliate Links if available
-    for tool in tools:
+    for tool in selected_tools:
         if tool["name"] in AFFILIATE_LINKS:
             tool["url"] = AFFILIATE_LINKS[tool["name"]]
             
-    return tools
+    return selected_tools
 
 # --- Gemini Generation ---
 def generate_review(tool):
