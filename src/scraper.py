@@ -119,16 +119,14 @@ def fetch_trending_tools():
     if len(available_tools) < 2:
         available_tools = ALL_TOOLS
     
-    # Randomly select 2 unique tools
-    if len(available_tools) >= 2:
-        selected_tools = random.sample(available_tools, 2)
+    # Randomly select 1 unique tool
+    if available_tools:
+        selected_tools = random.sample(available_tools, 1)
     else:
-        selected_tools = available_tools
+        # If history is full, pick any random tool to ensure content generation
+        selected_tools = random.sample(ALL_TOOLS, 1)
 
     # Update history for selected tools (in memory, saved later)
-    # We return the tool objects, main() will handle the review generation.
-    # We should update history AFTER successful generation, but for simplicity we prepare it here.
-    
     # Inject Affiliate Links
     for tool in selected_tools:
         if tool["name"] in AFFILIATE_LINKS:
