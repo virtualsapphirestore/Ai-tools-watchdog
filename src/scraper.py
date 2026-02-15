@@ -1,7 +1,8 @@
-
 import os
 import json
 import random
+import datetime
+import google.generativeai as genai
 
 # --- Configuration ---
 # Get API Key from environment variable (GitHub Secrets)
@@ -152,7 +153,7 @@ def generate_review(tool):
         IMPORTANT: Write the review in ENGLISH.
         
         Format:
-        ### [Tool Name]
+        ### <img src="https://logo.clearbit.com/{tool['url'].split('://')[-1].split('/')[0]}" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"> [Tool Name]
         **Verdict:** [One sentence summary]
         
         [2-3 sentences about what it does]
@@ -164,7 +165,14 @@ def generate_review(tool):
         """
         
         response = model.generate_content(prompt)
-        return response.text + "\n---\n"
+        # Fallback if model doesn't output the image tag exactly as requested, 
+        # we can forcefully inject it in the python return string, but let's try prompting first.
+        # Actually, it's safer to inject it in Python.
+        
+        logo_url = f"https://logo.clearbit.com/{tool['url'].split('://')[-1].split('/')[0]}"
+        review_text = response.text.replace("### ", f"### <img src='{logo_url}' width='32' style='vertical-align: middle; border-radius: 4px; margin-right: 8px;'> ")
+        
+        return review_text + "\n---\n"
     except Exception as e:
         print(f"Error generating review for {tool['name']}: {e}")
         return f"### {tool['name']}\n\n*Error generating review.*\n\n[Visit Tool]({tool['url']})\n"
