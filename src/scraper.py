@@ -145,17 +145,8 @@ def generate_review(tool):
     try:
         genai.configure(api_key=API_KEY)
         
-        # DEBUG: List available models
-        try:
-            print("Listing available models...")
-            for m in genai.list_models():
-                if 'generateContent' in m.supported_generation_methods:
-                    print(f"Found model: {m.name}")
-        except Exception as e:
-            print(f"Error listing models: {e}")
-
-        # Try using the full model path if simple name fails
-        model = genai.GenerativeModel('models/gemini-1.5-flash')
+        # Use a model confirmed to be available for this key
+        model = genai.GenerativeModel('models/gemini-2.0-flash')
         
         prompt = f"""
         Write a short but engaging review for an AI tool called "{tool['name']}".
