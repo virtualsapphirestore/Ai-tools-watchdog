@@ -144,7 +144,7 @@ def generate_review(tool):
 
     try:
         genai.configure(api_key=API_KEY)
-        model = genai.GenerativeModel('gemini-pro')
+        model = genai.GenerativeModel('gemini-1.5-flash')
         
         prompt = f"""
         Write a short but engaging review for an AI tool called "{tool['name']}".
