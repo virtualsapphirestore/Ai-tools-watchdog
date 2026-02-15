@@ -7,11 +7,19 @@ import google.generativeai as genai
 # Get API Key from environment variable (GitHub Secrets)
 API_KEY = os.environ.get("GOOGLE_API_KEY")
 
+# --- Affiliate Configuration ---
+# Add your affiliate links here. Format: "Tool Name": "Your Link"
+AFFILIATE_LINKS = {
+    "Gamma App": "https://gamma.app", # REPLACE THIS LATER with your affiliate link
+    "Jasper": "https://jasper.ai",
+    "Copy.ai": "https://copy.ai"
+}
+
 # --- Mock Data Source (Replace with real scraping logic) ---
 # In the future, you can use requests/BeautifulSoup here to scrape sites like ProductHunt, etc.
 def fetch_trending_tools():
     # This is a placeholder list. You can edit this or add scraping logic.
-    return [
+    tools = [
         {
             "name": "Gamma App",
             "url": "https://gamma.app",
@@ -23,6 +31,13 @@ def fetch_trending_tools():
             "description": "An AI-powered search engine that provides direct answers with citations."
         }
     ]
+    
+    # Inject Affiliate Links if available
+    for tool in tools:
+        if tool["name"] in AFFILIATE_LINKS:
+            tool["url"] = AFFILIATE_LINKS[tool["name"]]
+            
+    return tools
 
 # --- Gemini Generation ---
 def generate_review(tool):
