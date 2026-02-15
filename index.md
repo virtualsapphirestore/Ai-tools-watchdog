@@ -55,3 +55,16 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 *Review pending (API Key missing)*
 
 [Visit Tool](https://rytr.me)
+
+## Daily Update: 2026-02-15
+
+### Tabnine
+
+*Error generating review.*
+
+[Visit Tool](https://www.tabnine.com)
+### Lavender
+
+*Error generating review.*
+
+[Visit Tool](https://www.lavender.ai)
