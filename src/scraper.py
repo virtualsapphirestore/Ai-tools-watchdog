@@ -13,7 +13,7 @@ HISTORY_FILE = "history.json"
 # Add your affiliate links here. Format: "Tool Name": "Your Link"
 AFFILIATE_LINKS = {
     "Gamma App": "https://try.gamma.app/dmd9lziexhnu", 
-    "Murf AI": "https://murf.ai",     
+    "Murf AI": "https://get.murf.ai/ws24xarqap5a",     
     "Jasper": "https://jasper.ai",
     "Copy.ai": "https://copy.ai",
     "Descript": "https://www.descript.com",
