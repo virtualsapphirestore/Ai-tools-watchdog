@@ -194,33 +194,64 @@ def main():
         print("No tools to review today.")
         return
 
-    new_content = f"\n## Daily Update: {datetime.date.today()}\n\n"
+    # Prepare new content buffer
+    new_daily_content = f"\n## Daily Update: {datetime.date.today()}\n\n"
     
     tools_reviewed_count = 0
+    successful_tools = []
+
     for tool in tools:
         print(f"Reviewing {tool['name']}...")
         review = generate_review(tool)
-        if "Error generating review" not in review and "Review pending" not in review:
-             # Only update history if review was successful (or at least attempted with API key)
-             history[tool["name"]] = datetime.date.today().isoformat()
         
-        new_content += review
+        # Error Checking: If review contains error indicators, skip it.
+        if "Error:" in review or "quota exceeded" in review.lower() or "Review pending" in review:
+             print(f"SKIPPING {tool['name']} due to generation error.")
+             continue
+        
+        # Only if successful
+        history[tool["name"]] = datetime.date.today().isoformat()
+        new_daily_content += review
+        successful_tools.append(tool['name'])
         tools_reviewed_count += 1
     
-    # Save updated history
+    if tools_reviewed_count == 0:
+        print("No successful reviews generated. Exiting without updating file.")
+        return
+
+    # Save updated history (only for successful tools)
     save_history(history)
     
-    # Append to index.md
+    # Update index.md (Prepend Logic)
     file_path = "index.md"
-    # Ensure file exists
+    
+    # Ensure file exists or create default
     if not os.path.exists(file_path):
         with open(file_path, "w", encoding="utf-8") as f:
-            f.write("---\nlayout: default\ntitle: AI Tools Watchdog\n---\n\n# AI Tools Watchdog\n\nAutomated daily reviews of trending AI tools.\n\n")
-            
-    with open(file_path, "a", encoding="utf-8") as f:
-        f.write(new_content)
+            f.write("---\nlayout: default\ntitle: AI Tools Watchdog\n---\n\n# AI Tools Watchdog 🕵️‍♂️\n\nAutomated daily reviews of trending AI tools.\n\n## Latest Updates\n*Fresh from the lab...*\n\n---\n")
     
-    print(f"Updates written to index.md. {tools_reviewed_count} tools reviewed.")
+    # Read existing content
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+        
+    # Define the insertion marker
+    marker = "## Latest Updates\n*Fresh from the lab...*\n\n---\n"
+    
+    if marker in content:
+        # Split and insert new content immediately after the marker
+        parts = content.split(marker)
+        # parts[0] is header, parts[1] is existing updates
+        updated_content = parts[0] + marker + new_daily_content + parts[1]
+    else:
+        # Fallback if marker not found: Append to top (after front matter) or bottom
+        # Let's just append to bottom if structure is weird, but try to find a header
+        print("Warning: Insertion marker not found. Appending to bottom.")
+        updated_content = content + new_daily_content
+
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(updated_content)
+    
+    print(f"Updates written to index.md. {tools_reviewed_count} tools reviewed ({', '.join(successful_tools)}).")
 
 if __name__ == "__main__":
     main()
