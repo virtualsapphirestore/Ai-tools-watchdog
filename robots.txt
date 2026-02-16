@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://virtualsapphirestore.github.io/ai-tools-watchdog/sitemap.xml

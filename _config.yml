@@ -1,5 +1,9 @@
-title: AI Tools Watchdog
-description: Daily automated AI tool reviews.
+url: "https://virtualsapphirestore.github.io" # Replace with your actual username if different
+baseurl: "/ai-tools-watchdog" # Replace with repo name if different
+author: "AI Tools Watchdog"
+email: "your-email@example.com"
+twitter_username: "YourTwitterHandle" # Optional: for Twitter Cards
 
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
