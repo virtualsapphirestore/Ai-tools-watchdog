@@ -153,7 +153,7 @@ def generate_review(tool):
         IMPORTANT: Write the review in ENGLISH.
         
         Format:
-        ### <img src="https://logo.clearbit.com/{tool['url'].split('://')[-1].split('/')[0]}" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"> [Tool Name]
+        ### <img src="https://www.google.com/s2/favicons?domain={tool['url'].split('://')[-1].split('/')[0]}&sz=128" width="24" height="24" style="vertical-align: middle; margin-right: 8px;"> [Tool Name]
         **Verdict:** [One sentence summary]
         
         [2-3 sentences about what it does]
@@ -169,7 +169,7 @@ def generate_review(tool):
         # we can forcefully inject it in the python return string, but let's try prompting first.
         # Actually, it's safer to inject it in Python.
         
-        logo_url = f"https://logo.clearbit.com/{tool['url'].split('://')[-1].split('/')[0]}"
+        logo_url = f"https://www.google.com/s2/favicons?domain={tool['url'].split('://')[-1].split('/')[0]}&sz=128"
         review_text = response.text.replace("### ", f"### <img src='{logo_url}' width='32' style='vertical-align: middle; border-radius: 4px; margin-right: 8px;'> ")
         
         return review_text + "\n---\n"

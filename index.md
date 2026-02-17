@@ -18,7 +18,7 @@ Welcome to your daily AI tools observatory! Here you will find fresh, automated 
 
 ---
 
-### <img src="https://logo.clearbit.com/perplexity.ai" width="32" style="vertical-align: middle; border-radius: 4px; margin-right: 8px;"> Perplexity AI
+### <img src="https://www.google.com/s2/favicons?domain=perplexity.ai&sz=128" width="32" style="vertical-align: middle; border-radius: 4px; margin-right: 8px;"> Perplexity AI
 **Verdict:** The "Google killer" that actually delivers on the promise of conversational search.
 
 Perplexity AI combines the power of a large language model with a real-time search engine. Instead of a list of links, it gives you a direct, cited answer to your question. It's perfect for research, coding help, or just settling a bet.
@@ -32,7 +32,7 @@ Perplexity AI combines the power of a large language model with a real-time sear
 
 ## Daily Update: 2026-02-16
 
-### <img src="https://logo.clearbit.com/heygen.com" width="32" style="vertical-align: middle; border-radius: 4px; margin-right: 8px;"> HeyGen
+### <img src="https://www.google.com/s2/favicons?domain=heygen.com&sz=128" width="32" style="vertical-align: middle; border-radius: 4px; margin-right: 8px;"> HeyGen
 **Verdict:** The best AI video generator for creating realistic avatars that actually look like you.
 
 HeyGen takes AI video generation to the next level with its stunningly realistic avatars and lip-syncing technology. You can create a custom avatar of yourself or choose from a library of professional presenters. It's wildly popular for marketing videos, training materials, and personal greetings.
