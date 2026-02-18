@@ -1,13 +1,13 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const container = document.getElementById('bg-animation-container');
     if (!container) return;
 
     const frameCount = 60;
     const basePath = 'assets/images/bg-sequence/grok-video-433ac25d-d317-4660-bcd2-f2d148fc3655_';
     const images = [];
-    const fps = 24; 
+    const fps = 12; // Reduced speed by half 
     const interval = 1000 / fps;
-    
+
     let currentFrame = 0;
     let lastTime = 0;
 
@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
             // Only update if image is loaded, otherwise skip or wait? 
             // Better to display what we have to keep rhythm, or just check complete.
             if (img && img.complete && img.naturalHeight !== 0) {
-                 container.style.backgroundImage = `url("${img.src}")`;
+                container.style.backgroundImage = `url("${img.src}")`;
             }
-            
+
             currentFrame = (currentFrame + 1) % frameCount;
             lastTime = timestamp - (elapsed % interval); // Adjust for drift
         }
